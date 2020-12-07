@@ -7,8 +7,8 @@ import {
   Switch,
 } from "react-router-dom"
 
-import Login from './login/ui/login'
-import Register from './login/ui/register'
+import Login from './Login/ui/login'
+import Register from './Login/ui/register'
 
 import Bubbles from './Bubbles/ui/Bubbles'
 import BubbleBuilder from './BubbleBuilder/ui/BubbleBuilder';
