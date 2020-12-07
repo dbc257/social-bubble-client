@@ -1,25 +1,44 @@
-import { bindActionCreators } from "redux"
+import { createReducer } from "@reduxjs/toolkit"
+import {
+   onUserLogin,
+   // onUserLogout,
+   // onUpdateUserStatus,
+   // onCreateOrUpdateBubble,
+   // onRemoveBubble,
+   // onCreateOrUpdateBubbleUser,
+   // onleaveBubble,
+} from "./actions"
 
-const initialState = {
-    isAuthenticated: false,
-    user: {
-        id: 1,
-        firstName: "John",
-        lastName: "Smith",
-        email: "johnsmith@email.com",
-        password: "password",
-    }
-}
+// const initialState = {
+//    isAuthenticated: false,
+//    user: {
+//       id: 1,
+//       firstName: "John",
+//       lastName: "Smith",
+//       email: "johnsmith@email.com",
+//       password: "password",
+//    },
+// }
 
-const reducer = (state = initialState =>{
+const login = createReducer(
+   {},
+   {
+      [onUserLogin.type]: (state, { payload: user }) => {
+         return { ...state, user }
+      },
+   }
+)
 
-    if(bindActionCreators.type == 'ON_LOGIN') {
+/*
+export const authReducer =  createReducer(state = initialState, {
+
+    if(action.type === 'ON_LOGIN') {
         return {
             ...state,
             isAuthenticted: true
         }
     }
     return state
-})
-
-export default reducer
+}
+*/
+export { login }
