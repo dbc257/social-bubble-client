@@ -4,6 +4,7 @@ import React from "react"
 import { Provider } from "react-redux"
 import store from "./common/redux/store"
 import {
+  // Redirect,
   Route,
   BrowserRouter as Router,
   Switch,
@@ -23,6 +24,9 @@ function App() {
     <Provider store = {store}>
       <Router>
         <Switch>
+        <Route exact path="/">
+            <h1>Home</h1>
+          </Route>
           <Route exact path = "/login" component={Login} />
           <Route exact path = "/register" component={Register} />
           <Route exact path = '/bubbles' component={Bubbles} />
@@ -30,6 +34,9 @@ function App() {
           <Route exact path = '/dashboard' component = {Dashboard} />
           <Route exact path = '/members' component = {Members} />
         </Switch>
+        {/* <Route>
+            <Redirect to="/" />
+        </Route> */}
       </Router>
     </Provider>
   );

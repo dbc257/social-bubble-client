@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { NavLink } from "react-router-dom"
+// import { NavLink } from "react-router-dom"
 import { connect } from "react-redux"
 import "./BubbleBuilder.css"
 import Navbar from "../../Navbar/Navbar"
@@ -8,9 +8,9 @@ import Navbar from "../../Navbar/Navbar"
 
 
 function BubbleBuilder( props ) {
-    const test = ["Family", "Friends"]
+    // const test = ["Family", "Friends"]
 
-    const user = props.user
+    // const user = props.user
 
     const [bubble, setBubble] = useState({
         status: 'Green',
@@ -27,12 +27,12 @@ function BubbleBuilder( props ) {
         })
     }
 
-    const handleBubbleRuleChange = e => {
-        setBubble({
-            ...bubble,
-            'bubble-rules': [e.target.value]
-        })
-    }
+    // const handleBubbleRuleChange = e => {
+    //     setBubble({
+    //         ...bubble,
+    //         'bubble-rules': [e.target.value]
+    //     })
+    // }
 
     const handleNewRuleChange = e => {
         setNewRule(e.target.value)

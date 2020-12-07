@@ -1,6 +1,6 @@
 import {onUserLogin} from '../framework/actions'
 
-export const SendLogin = (dispatch) => async({
+const SendLogin = (dispatch) => async({
     fields
 }) => {
     console.log(fields)
@@ -34,4 +34,4 @@ export const SendLogin = (dispatch) => async({
     return dispatch(onUserLogin(user))
 }
 
-export default SendLogin
+export {SendLogin}

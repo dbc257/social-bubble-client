@@ -7,7 +7,7 @@ import {
     onAddBubbles
 } from "./actions"
 
-export const bubble = createReducer(
+const bubble = createReducer(
     {
         bubbleList: [],
     },
@@ -24,7 +24,7 @@ export const bubble = createReducer(
     }
 )
 
-export const bubbleUsers = createReducer(
+const bubbleUsers = createReducer(
     {
         byId: {},
         byUserId: {},
@@ -40,7 +40,7 @@ export const bubbleUsers = createReducer(
 
 )
 
-export const bubblePosts = createReducer(
+const bubblePosts = createReducer(
     {
         posts: {},
     },
@@ -53,4 +53,4 @@ export const bubblePosts = createReducer(
     }
 )
 
-export default { bubblePosts, bubble, bubbleUsers }
+export { bubblePosts, bubble, bubbleUsers }

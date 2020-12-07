@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink } from "react-router-dom"
+import React, { useEffect} from 'react'
+// import { NavLink } from "react-router-dom"
 import {connect} from "react-redux"
 import {GetBubbleUsers} from '../use-cases/getBubbleUsers'
 
@@ -8,7 +8,7 @@ export const Members = ({getBubbleUsers}) => {
 
     useEffect(()=> {
         getBubbleUsers(8)
-    },[])
+    },[getBubbleUsers])
 
     return (
         <div>

@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import { connect } from "react-redux"
-import { NavLink, Redirect } from "react-router-dom"
+// import { connect } from "react-redux"
+import { NavLink } from "react-router-dom"
 import "./login.css"
 
 export const Register = () => {
     const [fields, setFields] = useState({})
 
-    const [loginStatus, setloginStatus] = useState({})
+    // const [loginStatus, setloginStatus] = useState({})
     const setField = (evt) =>
         setFields({
             ...fields,

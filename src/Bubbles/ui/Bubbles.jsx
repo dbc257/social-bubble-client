@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import { NavLink } from "react-router-dom"
+import React, {useEffect} from 'react'
+// import { NavLink } from "react-router-dom"
 import { connect } from "react-redux"
 import './Bubbles.css'
 import {GetBubblePosts} from "../use-cases/getBubblePosts"
@@ -7,12 +7,12 @@ import {GetBubbleUsers} from "../use-cases/getBubbleUsers"
 
 
 export const  Bubbles = ({getPosts, getBubbleUsers, posts}) => {
-    const test = {name: 'John Smith', date: '9/10/2020', post: 'Some random test post about an activity'}
+    // const test = {name: 'John Smith', date: '9/10/2020', post: 'Some random test post about an activity'}
     useEffect(() => {
         getPosts(10)
         getBubbleUsers(10)
 
-    }, [])
+    }, [getPosts, getBubbleUsers])
 
     return (
         <div className="bubbles-container">
@@ -23,7 +23,7 @@ export const  Bubbles = ({getPosts, getBubbleUsers, posts}) => {
             </div>
             <div className = "bubble-status">This bubble is at risk!</div>
             <div className = "user-post">
-                <img src = "stock-profile.png" className = "profile-pic"></img>
+                <img src = "stock-profile.png" className = "profile-pic" alt=""></img>
                 <div className = "comment-info">
                     <div className = "name-date">
                         <div className = "username">John Smith</div>
@@ -34,7 +34,7 @@ export const  Bubbles = ({getPosts, getBubbleUsers, posts}) => {
             </div>
 
             <div className = "user-post">
-                <img src = "stock-profile.png" className = "profile-pic"></img>
+                <img src = "stock-profile.png" className = "profile-pic" alt=""></img>
                 <div className = "comment-info">
                     <div className = "name-date">
                         <div className = "username">John Smith</div>

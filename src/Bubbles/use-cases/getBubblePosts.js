@@ -1,9 +1,9 @@
 import {onGetBubblePosts} from '../framework/actions'
 
-export const GetBubblePosts = (dispatch) => async(
+const GetBubblePosts = (dispatch) => async(
     bubble
 ) => {
-    const bubbleId = {id: bubble.id}
+    // const bubbleId = {id: bubble.id}
 
     const response = await fetch(`http://localhost:8080/post/8`, {
         method: 'GET',
@@ -16,4 +16,4 @@ export const GetBubblePosts = (dispatch) => async(
     return dispatch(onGetBubblePosts(posts))
 }
 
-export default GetBubblePosts
+export {GetBubblePosts}

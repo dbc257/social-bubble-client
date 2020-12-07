@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom"
 import { connect } from "react-redux"
 import "./dashboard.css"
 import { GetUserBubbles } from "../use-cases/getUserBubbles"
-import {GetBubbleUsers} from "../use-cases/getBubbleUsers"
+// import {GetBubbleUsers} from "../use-cases/getBubbleUsers"
 import{AddNewBubble} from "../use-cases/addNewBubble"
-import Navbar from "../../Navbar/Navbar"
+// import Navbar from "../../Navbar/Navbar"
 
 export const Dashboard = ({ bubbles, getBubbles, addNewBubble, getBubbleUsers }) => {
-   const [loading, setLoading] = useState(true)
+   // const [loading, setLoading] = useState(true)
    const [adding, setAdding] = useState(false)
    const [fields, setFields] = useState({})
 
@@ -22,7 +22,7 @@ export const Dashboard = ({ bubbles, getBubbles, addNewBubble, getBubbleUsers })
    console.log(bubbles.bubbleList)
    useEffect(() => {
       getBubbles(8)
-   }, [])
+   }, [getBubbles])
 
 
    if (bubbles.bubbleList === []) {
@@ -37,7 +37,7 @@ export const Dashboard = ({ bubbles, getBubbles, addNewBubble, getBubbleUsers })
       return (
          <div className = "dashboard-container">
                <div className = "dashboard-username">John Smith</div>
-               <img src = "stock-profile.png" className = "profile-image"></img>
+               <img src = "stock-profile.png" className = "profile-image" alt=""></img>
                <div className = "dashboard-status"> You are risk </div>
                <input className = "status-input"></input>
 
