@@ -1,26 +1,26 @@
 import { createReducer } from "@reduxjs/toolkit"
 import {
    onUserLogin,
-   onUserLogout,
-   onUpdateUserStatus,
-   onCreateOrUpdateBubble,
-   onRemoveBubble,
-   onCreateOrUpdateBubbleUser,
-   onleaveBubble,
+   // onUserLogout,
+   // onUpdateUserStatus,
+   // onCreateOrUpdateBubble,
+   // onRemoveBubble,
+   // onCreateOrUpdateBubbleUser,
+   // onleaveBubble,
 } from "./actions"
 
-const initialState = {
-   isAuthenticated: false,
-   user: {
-      id: 1,
-      firstName: "John",
-      lastName: "Smith",
-      email: "johnsmith@email.com",
-      password: "password",
-   },
-}
+// const initialState = {
+//    isAuthenticated: false,
+//    user: {
+//       id: 1,
+//       firstName: "John",
+//       lastName: "Smith",
+//       email: "johnsmith@email.com",
+//       password: "password",
+//    },
+// }
 
-export const login = createReducer(
+const login = createReducer(
    {},
    {
       [onUserLogin.type]: (state, { payload: user }) => {
@@ -41,4 +41,4 @@ export const authReducer =  createReducer(state = initialState, {
     return state
 }
 */
-export default { login }
+export { login }

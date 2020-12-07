@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import {
     login,
-} from '../../login/framework/reducer'
+} from '../../Login/framework/reducer'
 
 import {
     bubble,

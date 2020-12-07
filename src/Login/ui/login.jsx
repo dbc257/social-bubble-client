@@ -10,7 +10,7 @@ import {SendLogin} from '../use-cases/user-login'
 export const Login = ({userLogin}) => {
     const [fields, setFields] = useState({})
 
-    const [loginStatus, setloginStatus] = useState({})
+    // const [loginStatus, setloginStatus] = useState({})
     const setField = (evt) =>
         setFields({
             ...fields,

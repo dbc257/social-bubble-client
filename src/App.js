@@ -4,14 +4,13 @@ import React from "react"
 import { Provider } from "react-redux"
 import store from "./common/redux/store"
 import {
-  Redirect,
   Route,
   BrowserRouter as Router,
   Switch,
 } from "react-router-dom"
 
-import Login from './login/ui/login'
-import Register from './login/ui/register'
+import Login from './Login/ui/login'
+import Register from './Login/ui/register'
 
 import Bubbles from './Bubbles/ui/Bubbles'
 import BubbleBuilder from './BubbleBuilder/ui/BubbleBuilder';
@@ -19,7 +18,7 @@ import Dashboard from './Bubbles/ui/Dashboard';
 import Members from './Bubbles/ui/Members'
 
 
-const App = () => {
+function App() {
   return (
     <Provider store = {store}>
       <Router>
