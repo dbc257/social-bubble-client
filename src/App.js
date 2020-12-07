@@ -58,15 +58,15 @@
 
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom'
+// import { BrowserRouter } from 'react-router-dom'
 import './App.css';
 // import Posts from './components/Posts'
 // import { Container, Header, Segment } from 'semantic-ui-react'
 import { Link, Route, Switch } from 'react-router-dom';
-import{ Login} from './login/ui/login';
-import{ Register} from './login/ui/register';
+import Login from './login/ui/login';
+import Register from './login/ui/register';
 // import PostDetail from './components/PostDetail';
 
 function App() {

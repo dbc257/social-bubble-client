@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { connect } from "react-redux"
 import "./login.css"
 import { setAuthenticationHeader } from "../../utils/Auth";
 
-import { UserLogin } from '../use-cases/user-login'
+// import { UserLogin } from '../use-cases/user-login'
 import axios from "axios";
   
-export function Login(props) {
+function Login(props) {
     
     // const [adminUser, setAdminUser] = useState({});
     // const [guestUser] = useState({
@@ -48,7 +48,7 @@ export function Login(props) {
             email: fields.email,
             password: fields.password
         })
-                .then((response =>{
+                .then((response) =>{
                     if (response.data.success) {
                         const token = response.data.token;
                         localStorage.setItem("jsonwebtoken", token);
@@ -65,6 +65,7 @@ export function Login(props) {
                         });
                     }
     })
+}
  
 
     // function handleAdminPost() {
@@ -129,12 +130,10 @@ export function Login(props) {
     // };
 
 
-    )
+    // )
 
     return (
         <>
-        <>
-
         <div className="login-container">
             <div className="logo">Social Bubble</div>
             <form className="login-form" onSubmit={Login}>
@@ -168,26 +167,20 @@ export function Login(props) {
             </button>
             
             </form>
-
-
-
-
-
             <div className="signup-link">
                 <p>Not a user? <NavLink to="/register/">Register</NavLink></p>
             </div>
         </div>
-        </>
     </>
   );
-}}
+}
 
 
 
-//         const mapDispatchToProps = (dispatch) => {
-//             return {
-//                 onLogin: () => dispatch({ type: 'ON_LOGIN' })
-//             }
-//         };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLogin: () => dispatch({ type: 'ON_LOGIN' })
+    }
+};
 
-// export default connect(null, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(Login)

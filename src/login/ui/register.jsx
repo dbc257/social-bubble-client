@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
-import { connect } from "react-redux"
-import { NavLink, Redirect } from "react-router-dom"
+// import { connect } from "react-redux"
+import { NavLink } from "react-router-dom"
 import "./login.css"
 
-export const Register = () => {
+function Register() {
     const [fields, setFields] = useState({})
 
-    const [loginStatus, setloginStatus] = useState({})
+    // const [loginStatus, setloginStatus] = useState({})
     const setField = (evt) =>
         setFields({
             ...fields,
