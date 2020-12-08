@@ -1,7 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import {
-    login,
-} from '../../Login/framework/reducer'
+import { loginReducer } from '../../Login/framework/reducer'
 
 import {
     bubble,
@@ -9,15 +7,15 @@ import {
     bubblePosts
 } from '../../Bubbles/framework/reducer'
 
-const reducers = {
-    login,
+const combineReducers = {
+    loginReducer,
     bubble,
     bubbleUsers,
     bubblePosts,
 }
 
 const store = configureStore({
-    reducer: reducers,
+    reducer: combineReducers
 })
 
 export default store

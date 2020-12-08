@@ -9,3 +9,7 @@ export const onRemoveBubble = createAction("bubble.remove")
 
 export const onCreateOrUpdateBubbleUser = createAction("bubble.bubbleUser.add")
 export const onRemoveBubbleUser = createAction("bubble.bubbleUser.remove")
+
+// import { createAction } from "@reduxjs/toolkit"
+
+// export const onUserLogin = createAction("user.login")

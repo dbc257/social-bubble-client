@@ -22,28 +22,28 @@ function Login(props) {
 
     function performLoginRequest() {
         axios
-         .post("http://localhost:8080/auth/login", {
+            .post("http://localhost:8080/auth/login", {
             email: fields.email,
             password: fields.password
         })
-                .then((response) =>{
-                    if (response.data.success) {
-                        const token = response.data.token;
-                        localStorage.setItem("jsonwebtoken", token);
-                        setAuthenticationHeader(token);
-                        props.onUserLogin();
-                        alert(response.data.message);
-                        history.push("/");
-                    } else {
-                        alert(response.data.message);
-                        alert("response failed");
-                        setFields({
-                        ...fields,
-                        password: "",
-                        });
-                    }
-    })
-}
+        .then((response) =>{
+            if (response.data.success) {
+                const token = response.data.token;
+                localStorage.setItem("jsonwebtoken", token);
+                setAuthenticationHeader(token);
+                props.onAuthenticated();
+                alert(response.data.message);
+                history.push("/");
+            } else {
+                alert(response.data.message);
+                alert("response failed");
+                setFields({
+                ...fields,
+                password: "",
+                });
+            }
+        })
+    }
 
             /*fetch('http://localhost:8080/login',{
               method: 'POST', 
@@ -73,7 +73,7 @@ function Login(props) {
                         <input className="username-input"
                             name="email"
                             type="email"
-                            value={fields.email}
+                            // value={fields.email}
                             onChange={setField}>
                         </input>
                     </div>
@@ -82,14 +82,14 @@ function Login(props) {
                         <input className="password-input"
                             name="password"
                             type="password"
-                            value={fields.password}
+                            // value={fields.password}
                             onChange={setField}>
                         </input>
                     </div>
                     <button
                     onClick={performLoginRequest}
                     // type="submit"
-                    className="login-btn"
+                    // className="login-btn"
                     >
                     Login
                     </button>
@@ -106,19 +106,24 @@ function Login(props) {
 }
 
 
-// const mapDispatchToProps = (dispatch) => ({
-//         onUserLogin: SendLogin(dispatch)
-// })
-
-// export default connect(null, mapDispatchToProps)(Login)
-
 const mapDispatchToProps = (dispatch) => {
     return {
-        onUserLogin: () => dispatch({ type: 'ON_LOGIN' })
+        // onAuthenticated: () => dispatch(actionCreators.authenticated(true)),
+        // onAuthenticated: () => dispatch(true)  isAuthenticated: true  
+        onAuthenticated: () => dispatch({type: 'user.login'})  
     }
-};
+//         onUserLogin: SendLogin(dispatch)
+}
 
 export default connect(null, mapDispatchToProps)(Login)
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         onUserLogin: () => dispatch({ type: 'ON_LOGIN' })
+//     }
+// };
+
+// export default connect(null, mapDispatchToProps)(Login)
 
 // import React, { useState } from "react"
 // import { NavLink } from "react-router-dom"
